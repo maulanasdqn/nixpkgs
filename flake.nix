@@ -7,23 +7,18 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-    plugin-fine-cmdline = {
-      url = "github:vonheikemen/fine-cmdline.nvim";
-      flake = false;
-    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, darwin }@inputs: {
     darwinConfigurations.beast = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
+        ./system
         home-manager.darwinModules.home-manager
         ({ config, pkgs, lib, ... }: {
           nixpkgs = {
-            config = {
-              allowUnfree = true;
-              overlays = [ (import ./overlays) ];
-            };
+            config = { allowUnfree = true; };
             system = "aarch64-darwin";
           };
 
@@ -40,7 +35,6 @@
             home.stateVersion = "23.11";
           };
         })
-        ./system
       ];
     };
   };

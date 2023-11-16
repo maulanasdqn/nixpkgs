@@ -18,11 +18,6 @@
         type = "lua";
       }
       {
-        plugin = vimPlugins.fine-cmdline;
-        type = "lua";
-        config = "${builtins.readFile ./lua/config/fine-cmdline.lua}";
-      }
-      {
         plugin = mason-lspconfig-nvim;
         type = "lua";
       }
