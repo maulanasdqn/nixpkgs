@@ -5,10 +5,10 @@
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
     withNodeJs = true;
     withPython3 = true;
     withRuby = true;
-    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -16,6 +16,11 @@
       {
         plugin = mason-nvim;
         type = "lua";
+      }
+      {
+        plugin = vimPlugins.fine-cmdline;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/fine-cmdline.lua}";
       }
       {
         plugin = mason-lspconfig-nvim;
@@ -149,6 +154,7 @@
       eza
       rnix-lsp
       prettierd
+      sumneko-lua-language-server
       luajitPackages.lua-lsp
       nodePackages.npm
       nodePackages.pnpm

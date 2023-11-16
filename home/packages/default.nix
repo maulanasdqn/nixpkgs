@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ bun nodejs eza ];
+  home.packages = with pkgs; [ bun nodejs eza htop ];
 }

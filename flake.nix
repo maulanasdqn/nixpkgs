@@ -7,6 +7,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+    plugin-fine-cmdline = {
+      url = "github:vonheikemen/fine-cmdline.nvim";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, darwin }@inputs: {
@@ -16,7 +20,10 @@
         home-manager.darwinModules.home-manager
         ({ config, pkgs, lib, ... }: {
           nixpkgs = {
-            config = { allowUnfree = true; };
+            config = {
+              allowUnfree = true;
+              overlays = [ (import ./overlays) ];
+            };
             system = "aarch64-darwin";
           };
 
