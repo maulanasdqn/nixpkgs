@@ -1,0 +1,163 @@
+{ pkgs, ... }:
+
+{
+  home.file.".config/nvim/settings.lua".source = ./lua/settings.lua;
+
+  programs.neovim = {
+    enable = true;
+    withNodeJs = true;
+    withPython3 = true;
+    withRuby = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      {
+        plugin = mason-nvim;
+        type = "lua";
+      }
+      {
+        plugin = mason-lspconfig-nvim;
+        type = "lua";
+      }
+      {
+        plugin = mason-tool-installer-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/mason.lua}";
+      }
+      {
+        plugin = vim-nix;
+        type = "lua";
+      }
+      {
+        plugin = vim-nixhash;
+        type = "lua";
+      }
+      {
+        plugin = cmp-path;
+        type = "lua";
+      }
+      {
+        plugin = cmp-vsnip;
+        type = "lua";
+      }
+      {
+        plugin = cmp-nvim-lsp;
+        type = "lua";
+      }
+      {
+        plugin = vim-vsnip;
+        type = "lua";
+      }
+      {
+        plugin = auto-pairs;
+        type = "lua";
+      }
+      {
+        plugin = plenary-nvim;
+        type = "lua";
+      }
+      {
+        plugin = kanagawa-nvim;
+        type = "lua";
+      }
+      {
+        plugin = nvim-web-devicons;
+        type = "lua";
+      }
+      {
+        plugin = blamer-nvim;
+        type = "lua";
+      }
+      {
+        plugin = codeium-vim;
+        type = "lua";
+      }
+      {
+        plugin = neoformat;
+        type = "lua";
+      }
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/lualine.lua}";
+      }
+      {
+        plugin = lspsaga-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/lspsaga.lua}";
+      }
+      {
+        plugin = lazy-lsp-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/lazy.lua}";
+      }
+      {
+        plugin = nvim-treesitter;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/treesitter.lua}";
+      }
+      {
+        plugin = nvim-cmp;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/cmp.lua}";
+      }
+      {
+        plugin = lspkind-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/lspkind.lua}";
+      }
+      {
+        plugin = telescope-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/telescope.lua}";
+      }
+      {
+        plugin = indent-blankline-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/indent.lua}";
+      }
+      {
+        plugin = nvim-lspconfig;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/lsp.lua}";
+      }
+      {
+        plugin = nvim-tree-lua;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/tree.lua}";
+      }
+      {
+        plugin = bufferline-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/bufferline.lua}";
+      }
+    ];
+
+    extraLuaConfig = ''
+      ${builtins.readFile ./lua/maps.lua}
+      ${builtins.readFile ./lua/settings.lua}
+    '';
+
+    extraPackages = with pkgs; [
+      zig
+      nixfmt
+      ripgrep
+      fd
+      golangci-lint
+      eza
+      rnix-lsp
+      prettierd
+      luajitPackages.lua-lsp
+      nodePackages.npm
+      nodePackages.pnpm
+      nodePackages.yarn
+      nodePackages."typescript"
+      nodePackages."typescript-language-server"
+      nodePackages."vscode-langservers-extracted"
+      nodePackages."@tailwindcss/language-server"
+      emmet-ls
+    ];
+  };
+}
