@@ -22,11 +22,6 @@
         type = "lua";
       }
       {
-        plugin = mason-tool-installer-nvim;
-        type = "lua";
-        config = "${builtins.readFile ./lua/config/mason.lua}";
-      }
-      {
         plugin = vim-nix;
         type = "lua";
       }
@@ -150,6 +145,7 @@
       rnix-lsp
       prettierd
       sumneko-lua-language-server
+      emmet-ls
       luajitPackages.lua-lsp
       nodePackages.npm
       nodePackages.pnpm
@@ -158,7 +154,7 @@
       nodePackages."typescript-language-server"
       nodePackages."vscode-langservers-extracted"
       nodePackages."@tailwindcss/language-server"
-      emmet-ls
+      nodePackages."live-server"
     ];
   };
 }
