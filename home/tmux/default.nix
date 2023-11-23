@@ -6,11 +6,10 @@
     sensible
     yank
     {
-      plugin = dracula;
+      plugin = gruvbox;
       extraConfig = ''
-        set -g @dracula-show-battery true
-        set -g @dracula-show-powerline false
-        set -g @dracula-refresh-rate 10
+        set -g @plugin 'egel/tmux-gruvbox'
+        set -g @tmux-gruvbox 'dark' # or 'light'
         set -g mouse on
       '';
     }

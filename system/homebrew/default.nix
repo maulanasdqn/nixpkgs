@@ -32,6 +32,7 @@
     "keepingyouawake"
     "postman"
     "min"
+    "obs"
   ];
 
 }

@@ -14,14 +14,6 @@
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = mason-nvim;
-        type = "lua";
-      }
-      {
-        plugin = mason-lspconfig-nvim;
-        type = "lua";
-      }
-      {
         plugin = vim-nix;
         type = "lua";
       }
@@ -54,11 +46,7 @@
         type = "lua";
       }
       {
-        plugin = kanagawa-nvim;
-        type = "lua";
-      }
-      {
-        plugin = nvim-web-devicons;
+        plugin = gruvbox-nvim;
         type = "lua";
       }
       {
@@ -71,6 +59,10 @@
       }
       {
         plugin = neoformat;
+        type = "lua";
+      }
+      {
+        plugin = nvim-web-devicons;
         type = "lua";
       }
       {
@@ -94,6 +86,11 @@
         config = "${builtins.readFile ./lua/config/treesitter.lua}";
       }
       {
+        plugin = nvim-tree-lua;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/tree.lua}";
+      }
+      {
         plugin = nvim-cmp;
         type = "lua";
         config = "${builtins.readFile ./lua/config/cmp.lua}";
@@ -109,6 +106,11 @@
         config = "${builtins.readFile ./lua/config/telescope.lua}";
       }
       {
+        plugin = telescope-file-browser-nvim;
+        type = "lua";
+      }
+
+      {
         plugin = indent-blankline-nvim;
         type = "lua";
         config = "${builtins.readFile ./lua/config/indent.lua}";
@@ -117,11 +119,6 @@
         plugin = nvim-lspconfig;
         type = "lua";
         config = "${builtins.readFile ./lua/config/lsp.lua}";
-      }
-      {
-        plugin = nvim-tree-lua;
-        type = "lua";
-        config = "${builtins.readFile ./lua/config/tree.lua}";
       }
       {
         plugin = bufferline-nvim;
@@ -144,13 +141,13 @@
       eza
       rnix-lsp
       prettierd
-      sumneko-lua-language-server
       emmet-ls
       luajitPackages.lua-lsp
       nodePackages.npm
       nodePackages.pnpm
       nodePackages.yarn
       nodePackages."typescript"
+      nodePackages."pyright"
       nodePackages."typescript-language-server"
       nodePackages."vscode-langservers-extracted"
       nodePackages."@tailwindcss/language-server"

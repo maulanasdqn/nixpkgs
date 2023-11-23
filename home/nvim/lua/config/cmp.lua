@@ -1,6 +1,5 @@
 local cmp = require('cmp')
 local kind = require('lspkind')
-local devicons = require('nvim-web-devicons')
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -13,19 +12,7 @@ local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true),mode, true)
 end
 
-  cmp.register_source('devicons', {
-    complete = function(self, params, callback)
-      local items = {}
-      for _, icon in pairs(devicons.get_icons()) do
-        table.insert(items, {
-          label = icon.icon .. '  ' .. icon.name,
-          insertText = icon.icon,
-          filterText = icon.name,
-       })
-      end
-      callback({ items = items })
-    end,
-  })
+  
 
   cmp.setup({
     formatting = {

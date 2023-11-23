@@ -17,7 +17,7 @@ with lib; {
       window_border_radius = 9;
       active_window_border_topmost = "off";
       window_topmost = "off";
-      window_shadow = "float";
+      window_shadow = "off";
       active_window_border_color = "0xff5c7e81";
       normal_window_border_color = "0xff505050";
       insert_window_border_color = "0xffd75f5f";
@@ -29,8 +29,8 @@ with lib; {
       mouse_action1 = "move";
       mouse_action2 = "resize";
       layout = "bsp";
-      top_padding = 34;
-      bottom_padding = 10;
+      top_padding = 10;
+      bottom_padding = 36;
       left_padding = 10;
       right_padding = 10;
       window_gap = 10;
@@ -45,35 +45,38 @@ with lib; {
   services.skhd.enable = true;
   services.skhd.package = pkgs.skhd;
   services.skhd.skhdConfig = ''
-    # Move focus container to workspace
-    shift + alt - m : yabai -m window --space last; yabai -m space --focus last
-    shift + alt - p : yabai -m window --space prev; yabai -m space --focus prev
-    shift + alt - n : yabai -m window --space next; yabai -m space --focus next
-    shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
-    shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
-    shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
-    shift + alt - 4 : yabai -m window --space 4; yabai -m space --focus 4
-
     # Moving windows
-    cmd - left : yabai -m window --warp west
-    cmd - down : yabai -m window --warp south
-    cmd - up : yabai -m window --warp north
-    cmd - right : yabai -m window --warp east
+    alt - h : yabai -m window --focus west
+    alt - j : yabai -m window --focus south
+    alt - k : yabai -m window --focus north
+    alt - l : yabai -m window --focus east
 
     # Float / Unfloat window
-    shift + alt - space : \
-    yabai -m window --toggle float; \
-    yabai -m window --toggle border
+    shift + alt - space : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-    # Make window native fullscreen
-    cmd + o : yabai -m window --toggle zoom-fullscreen; \ yabai -m window --toggle float
+    # Make window fullscreen
+    shift + alt - f : yabai -m window --toggle zomm-fullscreen
+
+    # Move Workspace
+    shift + alt - 1 : yabai -m window --space 1
+    shift + alt - 2 : yabai -m window --space 2
+    shift + alt - 3 : yabai -m window --space 3
+    shift + alt - 4 : yabai -m window --spcae 4
+    shift + alt - 5 : yabai -m window --spcae 5
+    shift + alt - 6 : yabai -m window --spcae 6
+    shift + alt - 7 : yabai -m window --spcae 7
+    shift + alt - 8 : yabai -m window --spcae 8
+    shift + alt - 9 : yabai -m window --spcae 9
+
+    SPACEBAR_HEIGHT=$(spacebar -m config height)
+    yabai -m config external_bar all:0:$SPACEBAR_HEIGHT
 
   '';
 
   services.spacebar.enable = true;
   services.spacebar.package = pkgs.spacebar;
   services.spacebar.config = {
-    position = "top";
+    position = "bottom";
     display = "main";
     height = 26;
     title = "on";
@@ -105,7 +108,6 @@ with lib; {
     dnd_icon = "";
     clock_format = ''"%d/%m/%y %R"'';
     right_shell = "on";
-    right_shell_icon = "";
     right_shell_command = "whoami";
   };
 }

@@ -5,7 +5,7 @@
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.plugins = [ "git" ];
+  programs.zsh.oh-my-zsh.plugins = [ "git" "ant" ];
   programs.zsh.oh-my-zsh.theme = "intheloop";
 
   programs.zsh.initExtra = ''

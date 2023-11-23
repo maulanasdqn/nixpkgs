@@ -50,6 +50,7 @@
     };
     defaults = {
       trackpad.Clicking = true;
+      dock.autohide = true;
       NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
     };
   };
