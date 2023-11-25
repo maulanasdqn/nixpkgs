@@ -33,6 +33,7 @@
     "postman"
     "min"
     "obs"
+    "mockoon"
   ];
 
 }

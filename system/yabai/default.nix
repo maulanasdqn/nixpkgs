@@ -1,6 +1,6 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
-with lib; {
+{
   services.yabai = {
     enable = true;
     package = pkgs.yabai;
@@ -30,7 +30,7 @@ with lib; {
       mouse_action2 = "resize";
       layout = "bsp";
       top_padding = 10;
-      bottom_padding = 36;
+      bottom_padding = 33;
       left_padding = 10;
       right_padding = 10;
       window_gap = 10;
