@@ -1,9 +1,8 @@
-{
+{ pkgs, ... }: {
   services.spacebar.enable = true;
   services.spacebar.package = pkgs.spacebar;
   services.spacebar.config = {
-    position = "bottom";
-    display = "main";
+    position = "top";
     height = 26;
     title = "on";
     spaces = "on";
@@ -33,6 +32,5 @@
     clock_icon = "";
     dnd_icon = "";
     clock_format = ''"%d/%m/%y %R"'';
-    right_shell = "on";
   };
 }
