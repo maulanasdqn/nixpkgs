@@ -2,7 +2,7 @@ local o = vim.opt
 local wo = vim.wo
 local fn = vim.fn
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme rose-pine")
 vim.cmd("set background=dark")
 vim.cmd("au InsertEnter * set nornu")
 vim.cmd("au InsertLeave * set rnu")
@@ -14,11 +14,7 @@ vim.cmd([[
   augroup END
 ]])
 
-vim.cmd([[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-]])
-
+vim.g.blamer_enabled = true
 o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" -- block in normal and beam cursor in insert mode
 o.wrap = false
 o.updatetime = 300 -- faster completion
@@ -36,7 +32,7 @@ o.conceallevel = 0 -- so that `` is visible in markdown files
 o.number = true -- set numbered lines
 o.relativenumber = true -- set relative numbered lines
 o.cmdheight = 2 -- space for displaying messages/commands
-o.showmode = false -- we don't need to see things like -- INSERT -- anymore
+o.showmode = true -- we don't need to see things like -- INSERT -- anymore
 o.showtabline = 2 -- always show tabs
 o.laststatus = 2 --  The value of this option influences when the last window will have a status line (2 always)
 o.smartcase = true -- smart case

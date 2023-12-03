@@ -4,6 +4,7 @@ local default_options = {noremap = true, silent = true}
 map("n", "<Space>", "<NOP>", default_options)
 map("n", "S", "<cmd>Telescope live_grep<CR>", {noremap = true})
 map("n", "s", "<cmd>Telescope find_files<CR>", {noremap = true})
+map("n", "T", "<cmd>Telescope buffers<CR>", {noremap = true})
 map("n", "t", "<cmd>Lspsaga term_toggle<CR>", {noremap = true})
 map("n", "C", "<cmd>NvimTreeToggle<CR>", {noremap = true})
 map("n", "c", "<cmd>Telescope file_browser<CR>", {noremap = true})

@@ -14,7 +14,7 @@
   homebrew.enable = true;
   homebrew.onActivation.cleanup = "zap";
   homebrew.global.brewfile = true;
-  homebrew.brews = [ "z" ];
+  homebrew.brews = [ "z" "postgresql" ];
 
   homebrew.casks = [
     "firefox"
@@ -34,6 +34,7 @@
     "min"
     "obs"
     "mockoon"
+    "microsoft-edge"
   ];
 
 }
