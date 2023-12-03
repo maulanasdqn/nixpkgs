@@ -9,6 +9,7 @@
   programs.zsh.oh-my-zsh.theme = "intheloop";
 
   programs.zsh.initExtra = ''
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     export PATH=~/.npm-packages/bin:$PATH
     export PATH=~/.grader/bin:$PATH
     export NODE_PATH=~/.npm-packages/lib/node_modules
@@ -16,8 +17,7 @@
     export PATH="$HOME/.local/bin:$PATH"
     export NIX_REMOTE=daemon
     export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
-    export NIX_PATH="nixpkgs=/nix/var/nix/profiles/per-user/$USER/channels/nixpkgs:/nix/var/nix/profiles/per-user/$USER/channels"
-    export NIX_PROFILES="/nix/var/nix/profiles/per-user/$USER/channels"
+    export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
     export NODE_OPTIONS=--max_old_space_size=4096        
     source ~/.config/nixpkgs/home/zsh/z.sh
   '';

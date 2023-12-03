@@ -1,1 +1,1 @@
-{ imports = [ ./zsh ./git ./tmux ./direnv ./nvim ./starship ]; }
+{ imports = [ ./zsh ./git ./tmux ./direnv ./nvim ./starship ./packages ]; }
