@@ -10,7 +10,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, darwin }@inputs: {
-    darwinConfigurations.beast = darwin.lib.darwinSystem {
+    darwinConfigurations.beast-2 = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./system

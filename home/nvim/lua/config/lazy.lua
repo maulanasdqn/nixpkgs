@@ -7,6 +7,8 @@ require("lazy-lsp").setup({
 		"zk",
 		"denols",
     "sqls",
+    "ruff_lsp",
+    "pylyzer",
 	},
 	default_config = {
 		flags = {

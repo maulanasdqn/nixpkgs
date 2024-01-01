@@ -10,6 +10,10 @@ nvim_lsp.pyright.setup {
   filetypes = { "python" }
 }
 
+nvim_lsp.pylyzer.setup {
+  filetypes = { "python" }
+}
+
 nvim_lsp.html.setup {
   capabilities = capabilities,
   filetypes = { "html" }

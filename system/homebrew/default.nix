@@ -15,6 +15,9 @@
   homebrew.onActivation.cleanup = "zap";
   homebrew.global.brewfile = true;
 
+  homebrew.brews =
+    [ "z" "libressl" "glib-openssl" "openssl" "gnutls" "ninja" "cmake" ];
+
   homebrew.casks = [
     "firefox"
     "google-chrome"
@@ -32,7 +35,6 @@
     "postman"
     "min"
     "obs"
-    "mockoon"
     "microsoft-edge"
   ];
 
