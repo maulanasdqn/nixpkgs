@@ -36,6 +36,7 @@
     "min"
     "obs"
     "microsoft-edge"
+    "android-platform-tools"
   ];
 
 }
