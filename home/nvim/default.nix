@@ -65,12 +65,25 @@
         plugin = rose-pine;
         type = "lua";
       }
+      {
+        plugin = nvim-notify;
+        type = "lua";
+      }
+      {
+        plugin = nui-nvim;
+        type = "lua";
+      }
 
       {
-        plugin = lualine-nvim;
+        plugin = noice-nvim;
         type = "lua";
-        config = "${builtins.readFile ./lua/config/lualine.lua}";
+        config = "${builtins.readFile ./lua/config/noice.lua}";
       }
+      #{
+      #  plugin = lualine-nvim;
+      #  type = "lua";
+      #  config = "${builtins.readFile ./lua/config/lualine.lua}";
+      #}
       {
         plugin = lspsaga-nvim;
         type = "lua";
@@ -120,7 +133,11 @@
         type = "lua";
         config = "${builtins.readFile ./lua/config/lsp.lua}";
       }
-
+      #{
+      #  plugin = bufferline-nvim;
+      #  type = "lua";
+      #  config = "${builtins.readFile ./lua/config/bufferline.lua}";
+      #}
     ];
 
     extraLuaConfig = ''
