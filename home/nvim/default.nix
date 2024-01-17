@@ -18,6 +18,11 @@
         type = "lua";
       }
       {
+        plugin = rainbow;
+        type = "lua";
+      }
+
+      {
         plugin = vim-nixhash;
         type = "lua";
       }
@@ -119,15 +124,15 @@
         type = "lua";
         config = "${builtins.readFile ./lua/config/telescope.lua}";
       }
-      {
-        plugin = telescope-file-browser-nvim;
-        type = "lua";
-      }
-      {
-        plugin = indent-blankline-nvim;
-        type = "lua";
-        config = "${builtins.readFile ./lua/config/indent.lua}";
-      }
+      #{
+      #  plugin = telescope-file-browser-nvim;
+      #  type = "lua";
+      #}
+      #{
+      #  plugin = indent-blankline-nvim;
+      #  type = "lua";
+      #  config = "${builtins.readFile ./lua/config/indent.lua}";
+      #}
       {
         plugin = nvim-lspconfig;
         type = "lua";
