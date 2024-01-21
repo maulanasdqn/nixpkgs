@@ -9,5 +9,8 @@
     postgresql
     fd
     android-tools
+    rubber
+    ripgrep
+    luajitPackages.lua-lsp
   ];
 }

@@ -6,10 +6,10 @@
     sensible
     yank
     {
-      plugin = yank;
+      plugin = catppuccin;
       extraConfig = ''
-        set -g status-style 'bg=#333333 fg=#5eacd3'
-        set -g default-terminal "xterm-256color"
+        set -g @plugin rose-pine/tmux
+        set -g @rose_pine_host on
         set -g mouse on
       '';
     }

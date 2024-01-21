@@ -1,5 +1,5 @@
 {
-  description = "Nix Darwin";
+  description = "Nix Darwin Maulana Sodiqin";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -7,9 +7,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin }@inputs: {
+  outputs = { self, nixpkgs, home-manager, darwin, nixvim, ... }@inputs: {
     darwinConfigurations.beast-2 = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [

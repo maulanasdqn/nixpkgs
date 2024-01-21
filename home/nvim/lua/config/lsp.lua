@@ -43,8 +43,6 @@ nvim_lsp.eslint.setup{
 
 nvim_lsp.rnix.setup{}
 
-nvim_lsp.lua_ls.setup{}
-
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

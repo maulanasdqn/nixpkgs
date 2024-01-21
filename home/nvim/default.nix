@@ -17,11 +17,15 @@
         plugin = vim-nix;
         type = "lua";
       }
+      { plugin = vim-latex-live-preview; }
       {
         plugin = rainbow;
         type = "lua";
       }
-
+      {
+        plugin = knap;
+        type = "lua";
+      }
       {
         plugin = vim-nixhash;
         type = "lua";
@@ -84,11 +88,11 @@
         type = "lua";
         config = "${builtins.readFile ./lua/config/noice.lua}";
       }
-      #{
-      #  plugin = lualine-nvim;
-      #  type = "lua";
-      #  config = "${builtins.readFile ./lua/config/lualine.lua}";
-      #}
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/lualine.lua}";
+      }
       {
         plugin = lspsaga-nvim;
         type = "lua";
@@ -138,11 +142,11 @@
         type = "lua";
         config = "${builtins.readFile ./lua/config/lsp.lua}";
       }
-      #{
-      #  plugin = bufferline-nvim;
-      #  type = "lua";
-      #  config = "${builtins.readFile ./lua/config/bufferline.lua}";
-      #}
+      {
+        plugin = bufferline-nvim;
+        type = "lua";
+        config = "${builtins.readFile ./lua/config/bufferline.lua}";
+      }
     ];
 
     extraLuaConfig = ''

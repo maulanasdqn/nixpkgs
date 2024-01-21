@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.shellInit = ''
@@ -15,12 +15,7 @@
   homebrew.onActivation.cleanup = "zap";
   homebrew.global.brewfile = true;
 
-  homebrew.brews =
-    [ "z" "libressl" "glib-openssl" "openssl" "gnutls" "ninja" "cmake" ];
-
   homebrew.casks = [
-    "firefox"
-    "google-chrome"
     "raycast"
     "insomnia"
     "figma"
@@ -30,10 +25,8 @@
     "zoom"
     "mysqlworkbench"
     "orbstack"
-    "rectangle"
     "keepingyouawake"
     "postman"
-    "min"
     "obs"
     "microsoft-edge"
     "android-platform-tools"
