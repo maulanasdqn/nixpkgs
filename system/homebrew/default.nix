@@ -21,14 +21,12 @@
     "figma"
     "discord"
     "slack"
-    "iterm2"
     "zoom"
     "mysqlworkbench"
     "orbstack"
     "keepingyouawake"
     "postman"
     "obs"
-    "microsoft-edge"
     "android-platform-tools"
   ];
 

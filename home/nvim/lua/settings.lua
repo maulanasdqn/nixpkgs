@@ -6,6 +6,7 @@ vim.cmd("colorscheme rose-pine")
 vim.cmd("set background=dark")
 vim.cmd("au InsertEnter * set nornu")
 vim.cmd("au InsertLeave * set rnu")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
 vim.cmd([[
   augroup fmt
