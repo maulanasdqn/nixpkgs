@@ -12,7 +12,7 @@ local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true),mode, true)
 end
 
-  
+
 
   cmp.setup({
     formatting = {
@@ -69,7 +69,7 @@ end
       { name = 'nvim_lsp' },
       { name = 'vsnip' },
       { name = 'codeium' },
-    }, 
+    },
     {
       { name = 'buffer' },
     })
@@ -78,7 +78,7 @@ end
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
       { name = 'cmp_git' },
-    }, 
+    },
     {
       { name = 'buffer' },
     })

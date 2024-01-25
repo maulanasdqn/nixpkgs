@@ -23,6 +23,7 @@
     export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
     export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
     export NODE_OPTIONS=--max_old_space_size=4096
+    export DIRENV_LOG_FORMAT=
     export PATH="/opt/homebrew/opt/libressl/bin:$PATH"
     export LDFLAGS="-L/opt/homebrew/opt/libressl/lib"
     export CPPFLAGS="-I/opt/homebrew/opt/libressl/include"

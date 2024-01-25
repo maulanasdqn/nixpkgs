@@ -17,6 +17,10 @@
         plugin = vim-nix;
         type = "lua";
       }
+      {
+        plugin = catppuccin-nvim;
+        type = "lua";
+      }
       { plugin = vim-latex-live-preview; }
       {
         plugin = rainbow;

@@ -12,5 +12,6 @@
     rubber
     ripgrep
     luajitPackages.lua-lsp
+    vscode
   ];
 }

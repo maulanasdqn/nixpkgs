@@ -2,11 +2,10 @@ local o = vim.opt
 local wo = vim.wo
 local fn = vim.fn
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme catppuccin")
 vim.cmd("set background=dark")
 vim.cmd("au InsertEnter * set nornu")
 vim.cmd("au InsertLeave * set rnu")
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
 vim.cmd([[
   augroup fmt
@@ -16,51 +15,51 @@ vim.cmd([[
 ]])
 
 vim.g.blamer_enabled = true
-o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" -- block in normal and beam cursor in insert mode
+o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 o.wrap = false
-o.updatetime = 300 -- faster completion
-o.timeoutlen = 400 -- time to wait for a mapped sequence to complete ()
-o.ttimeoutlen = 0 -- Time in milliseconds to wait for a key code sequence to complete
-o.backup = false -- creates a backup file
-o.swapfile = false -- enable/disable swap file creation
-o.dir = fn.stdpath("data") .. "/swp" -- swap file directory
-o.undofile = false -- enable/disable undo file creation
-o.undodir = fn.stdpath("data") .. "/undodir" -- set undo directory
-o.history = 500 -- Use the 'history' option to set the number of lines from command mode that are remembered.
-o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-o.fileencoding = "utf-8" -- the encoding written to a file
-o.conceallevel = 0 -- so that `` is visible in markdown files
-o.number = true -- set numbered lines
-o.relativenumber = true -- set relative numbered lines
-o.cmdheight = 1 -- space for displaying messages/commands
-o.showmode = false -- we don't need to see things like -- INSERT -- anymore
-o.laststatus = 2 --  The value of this option influences when the last window will have a status line (2 always)
-o.smartcase = true -- smart case
-o.smartindent = true -- make indenting smarter again
-o.splitbelow = true -- force all horizontal splits to go below current window
-o.splitright = true -- force all vertical splits to go to the right of current window
-o.expandtab = true -- convert tabs to spaces
-o.shiftwidth = 2 -- the number of spaces inserted for each indentation
-o.tabstop = 1 -- how many columns a tab counts for
+o.updatetime = 300
+o.timeoutlen = 400
+o.ttimeoutlen = 0
+o.backup = false
+o.swapfile = false
+o.dir = fn.stdpath("data") .. "/swp"
+o.undofile = false
+o.undodir = fn.stdpath("data") .. "/undodir"
+o.history = 500
+o.clipboard = "unnamedplus"
+o.fileencoding = "utf-8"
+o.conceallevel = 0
+o.number = true
+o.relativenumber = true
+o.cmdheight = 1
+o.showmode = false
+o.laststatus = 2
+o.smartcase = true
+o.smartindent = true
+o.splitbelow = true
+o.splitright = true
+o.expandtab = true
+o.shiftwidth = 2
+o.tabstop = 1
 o.tabpagemax = 1
 o.showtabline = 0
-o.termguicolors = true -- set term gui colors (most terminals support this)
-o.cursorline = true -- highlight the current line
-o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cursor
-o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
-o.hlsearch = true -- highlight all matches on previous search pattern
-o.ignorecase = true -- ignore case in search pattern
-o.foldenable = true -- disable folding; enable with zi
-o.foldmethod = "syntax" -- foldmethod set to syntax
-o.foldexpr = "nvim_treesitter#foldexpr()" -- o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
+o.termguicolors = true
+o.cursorline = true
+o.scrolloff = 3
+o.sidescrolloff = 5
+o.hlsearch = true
+o.ignorecase = true
+o.foldenable = true
+o.foldmethod = "syntax"
+o.foldexpr = "nvim_treesitter#foldexpr()"
 o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
-o.shortmess = o.shortmess + "c" -- prevent "pattern not found" messages
+o.shortmess = o.shortmess + "c"
 wo.colorcolumn = "99999"
 o.wildmode = "full"
-o.lazyredraw = true -- do not redraw screen while running macros
-o.grepprg = "rg --hidden --vimgrep --smart-case --" -- use rg instead of grep
-o.completeopt = { "menu", "menuone", "noselect", "noinsert" } -- A comma separated list of options for Insert mode completion
-o.wildignorecase = true -- When set case is ignored when completing file names and directories
+o.lazyredraw = true
+o.grepprg = "rg --hidden --vimgrep --smart-case --"
+o.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+o.wildignorecase = true
 o.wildignore = [[
 .git,.hg,.svn
 *.aux,*.out,*.toc
