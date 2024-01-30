@@ -1,4 +1,1 @@
-{
-  imports =
-    [ ./hosts ./homebrew ./spacebar ./yabai ./skhd ./postgresql ./packages ];
-}
+{ imports = [ ./hosts ./homebrew ./yabai ./postgresql ./packages ]; }

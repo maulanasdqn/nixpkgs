@@ -38,7 +38,6 @@
 
     extraConfig = ''
       yabai -m rule --add app='System Preferences' manage=off
-      yabai -m config external_bar all:26:0
     '';
   };
 }

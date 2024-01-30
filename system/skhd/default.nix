@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  services.skhd.enable = true;
+  services.skhd.enable = false;
   services.skhd.package = pkgs.skhd;
   services.skhd.skhdConfig = ''
     # toggle window properties
