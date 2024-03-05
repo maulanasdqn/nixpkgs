@@ -15,9 +15,14 @@
     luajitPackages.lua-lsp
     vscode
     docker
+    inkscape
 
     (writeScriptBin "kd" ''
       killall -9 Dock
+    '')
+
+    (writeScriptBin "kp" ''
+      kill -9 $(lsof -ti:3001)
     '')
 
   ];
