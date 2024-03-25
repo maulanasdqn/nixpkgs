@@ -40,6 +40,9 @@
   programs.zsh.shellAliases.c = "clear";
   programs.zsh.shellAliases.v = "nvim";
   programs.zsh.shellAliases.t = "tmux";
+  programs.zsh.shellAliases.yr = "yarn";
+  programs.zsh.shellAliases.pn = "pnpm";
+  programs.zsh.shellAliases.px = "pnpx";
 
   programs.zsh.history = {
     size = 10000;

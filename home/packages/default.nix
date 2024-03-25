@@ -16,6 +16,8 @@
     vscode
     docker
     inkscape
+    mkcert
+    prettierd
 
     (writeScriptBin "kd" ''
       killall -9 Dock

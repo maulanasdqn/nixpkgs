@@ -23,7 +23,6 @@
     "slack"
     "zoom"
     "mysqlworkbench"
-    "orbstack"
     "keepingyouawake"
     "postman"
     "obs"
