@@ -1,1 +1,1 @@
-{ imports = [ ./hosts ./homebrew ./yabai ./postgresql ./packages ]; }
+{ imports = [ ./hosts ./homebrew ./yabai ./mysql ./postgresql ./packages ]; }

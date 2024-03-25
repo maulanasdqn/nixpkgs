@@ -18,6 +18,7 @@
     inkscape
     mkcert
     prettierd
+    mysql80
 
     (writeScriptBin "kd" ''
       killall -9 Dock
